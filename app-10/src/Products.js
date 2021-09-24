@@ -22,11 +22,11 @@ export default class Products extends Component {
         return (
             <div>
                 <h1>Products Page</h1>
-                <ul>
+                    <ul>
                     {this.state.data.map(item => {
-                       return <li key={item.id}><Link to={`/product/${item.id}`}>{item.title}</Link></li>
+                       return <li key={item.id}><Link to={{pathname: `/product/${item.id}`, state: {data: this.state.data[item.id]}}}>{item.title}</Link></li>
                     })}
-                </ul>
+                    </ul>
             </div>
         )
     }
